@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "person_detection",
-    "project_version":    "1",
+    "project_version":    "7e1b70d-dirty",
     "project_path":       "/home/gabriel/esp/projects_tf/person_detection",
     "idf_path":           "/home/gabriel/esp/idf/esp-idf",
     "build_dir":          "/home/gabriel/esp/projects_tf/person_detection/build",
@@ -1191,7 +1191,7 @@
             "type": "LIBRARY",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "console", "static_images", "spi_flash", "espressif__esp-tflite-micro", "espressif__esp32-camera" ],
+            "priv_reqs": [ "console", "static_images", "spi_flash", "esp_psram", "espressif__esp-tflite-micro", "espressif__esp32-camera" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__esp-tflite-micro", "espressif__esp32-camera" ],
             "file": "/home/gabriel/esp/projects_tf/person_detection/build/esp-idf/main/libmain.a",
@@ -2794,7 +2794,7 @@
             "dir": "/home/gabriel/esp/projects_tf/person_detection/main",
             "lib": "__idf_main",
             "reqs": [],
-            "priv_reqs": [ "console", "static_images", "spi_flash", "espressif__esp-tflite-micro", "espressif__esp32-camera" ],
+            "priv_reqs": [ "console", "static_images", "spi_flash", "esp_psram", "espressif__esp-tflite-micro", "espressif__esp32-camera" ],
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__esp-tflite-micro", "espressif__esp32-camera" ],
             "include_dirs": []
@@ -2810,6 +2810,18 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "include_dirs": []
+        },
+        "espressif__esp-nn": {
+            "alias": "idf::espressif__esp-nn",
+            "target": "___idf_espressif__esp-nn",
+            "prefix": "idf",
+            "dir": "/home/gabriel/esp/projects_tf/person_detection/managed_components/espressif__esp-nn",
+            "lib": "__idf_espressif__esp-nn",
+            "reqs": [],
+            "priv_reqs": [],
+            "managed_reqs": [],
+            "managed_priv_reqs": [],
+            "include_dirs": [ "include", "src/common" ]
         },
         "espressif__esp32-camera": {
             "alias": "idf::espressif__esp32-camera",
@@ -2834,18 +2846,6 @@
             "managed_reqs": [],
             "managed_priv_reqs": [ "espressif__esp-nn" ],
             "include_dirs": [ ".", "third_party/gemmlowp", "third_party/flatbuffers/include", "third_party/ruy", "third_party/kissfft", "signal/micro/kernels", "signal/src", "signal/src/kiss_fft_wrappers" ]
-        },
-        "espressif__esp-nn": {
-            "alias": "idf::espressif__esp-nn",
-            "target": "___idf_espressif__esp-nn",
-            "prefix": "idf",
-            "dir": "/home/gabriel/esp/projects_tf/person_detection/managed_components/espressif__esp-nn",
-            "lib": "__idf_espressif__esp-nn",
-            "reqs": [],
-            "priv_reqs": [],
-            "managed_reqs": [],
-            "managed_priv_reqs": [],
-            "include_dirs": [ "include", "src/common" ]
         }
     },
     "debug_prefix_map_gdbinit": ""

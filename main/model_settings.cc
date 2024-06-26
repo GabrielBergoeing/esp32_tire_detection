@@ -16,7 +16,7 @@ limitations under the License.
 #include "model_settings.h"
 
 const char* kCategoryLabels[kCategoryCount] = {
-    "flattire",
-    "fulltire",
-    "notire",
+    "flat",
+    "full",
+    "no_tire",
 };

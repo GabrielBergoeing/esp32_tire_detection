@@ -1,0 +1,257 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-421-g4523f2d674 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 25 2024 16:20:07[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=50d28h (331048) map[0m
+[0;32mI (194) esp_image: segment 1: paddr=00060d50 vaddr=3ffb0000 size=0335ch ( 13148) load[0m
+[0;32mI (198) esp_image: segment 2: paddr=000640b4 vaddr=40080000 size=0bf64h ( 48996) load[0m
+[0;32mI (215) esp_image: segment 3: paddr=00070020 vaddr=400d0020 size=2f288h (193160) map[0m
+[0;32mI (265) esp_image: segment 4: paddr=0009f2b0 vaddr=4008bf64 size=04ac4h ( 19140) load[0m
+[0;32mI (279) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (279) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (291) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (291) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (293) esp_psram: Speed: 80MHz[0m
+[0;32mI (297) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (305) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (781) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (788) cpu_start: Pro cpu start user code[0m
+[0;32mI (788) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (788) app_init: Application information:[0m
+[0;32mI (791) app_init: Project name:     person_detection[0m
+[0;32mI (797) app_init: App version:      7e1b70d-dirty[0m
+[0;32mI (802) app_init: Compile time:     Jun 25 2024 16:19:58[0m
+[0;32mI (808) app_init: ELF file SHA256:  285801d1f...[0m
+[0;32mI (814) app_init: ESP-IDF:          v5.4-dev-421-g4523f2d674[0m
+[0;32mI (820) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (830) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (835) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (842) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (848) heap_init: At 3FFB4118 len 0002BEE8 (175 KiB): DRAM[0m
+[0;32mI (854) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (860) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (867) heap_init: At 40090A28 len 0000F5D8 (61 KiB): IRAM[0m
+[0;32mI (873) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (881) spi_flash: detected chip: generic[0m
+[0;32mI (885) spi_flash: flash io: qio[0m
+[0;33mW (889) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (900) main_task: Started on CPU0[0m
+[0;32mI (910) main_task: Calling app_main()[0m
+[0;32mI (910) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (910) cam_hal: cam init ok[0m
+[0;32mI (920) sccb: pin_sda 26 pin_scl 27[0m
+[0;32mI (920) sccb: sccb_i2c_port=1[0m
+[0;32mI (920) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (960) camera: Detected camera at address=0x30[0m
+[0;32mI (960) camera: Detected OV2640 camera[0m
+[0;32mI (960) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1030) esp32 ll_cam: node_size: 3072, nodes_per_line: 1, lines_per_node: 4, dma_half_buffer_min:  3072, dma_half_buffer: 12288,lines_per_half_buffer: 16, dma_buffer_size: 24576, image_size: 18432[0m
+[0;32mI (1040) cam_hal: buffer_size: 24576, half_buffer_size: 12288, node_buffer_size: 3072, node_cnt: 8, total_cnt: 1[0m
+[0;32mI (1050) cam_hal: Allocating 9216 Byte frame buffer in PSRAM[0m
+[0;32mI (1060) cam_hal: Allocating 9216 Byte frame buffer in PSRAM[0m
+[0;32mI (1060) cam_hal: cam config ok[0m
+[0;32mI (1070) ov2640: Set PLL: clk_2x: 0, clk_div: 3, pclk_auto: 1, pclk_div: 8[0m
+Camera Initialized
+
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (2010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (2710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (3410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (4110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (4810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (5510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (6210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (6910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (7610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (8310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (9010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (9710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (10410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (11110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (11810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (12510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (13210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (13910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (14610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (15310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (16010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (16710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (17410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (18110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (18810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (19510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (20210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (20910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (21610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (22310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (23010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (23710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (24410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (25110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (25810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (26510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (27210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (27910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (28610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (29310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (30010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (30710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (31410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (32110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+

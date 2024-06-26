@@ -1,0 +1,3629 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:7524
+load:0x40078000,len:16552
+load:0x40080400,len:4
+load:0x40080404,len:4312
+entry 0x4008065c
+[0;32mI (29) boot: ESP-IDF v5.4-dev-421-g4523f2d674 2nd stage bootloader[0m
+[0;32mI (29) boot: compile time Jun 25 2024 16:20:07[0m
+[0;32mI (31) boot: Multicore bootloader[0m
+[0;32mI (35) boot: chip revision: v3.1[0m
+[0;32mI (39) qio_mode: Enabling default flash chip QIO[0m
+[0;32mI (44) boot.esp32: SPI Speed      : 80MHz[0m
+[0;32mI (49) boot.esp32: SPI Mode       : QIO[0m
+[0;32mI (53) boot.esp32: SPI Flash Size : 4MB[0m
+[0;32mI (58) boot: Enabling RNG early entropy source...[0m
+[0;32mI (63) boot: Partition Table:[0m
+[0;32mI (67) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (74) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (82) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (89) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (97) boot: End of partition table[0m
+[0;32mI (101) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=50d28h (331048) map[0m
+[0;32mI (194) esp_image: segment 1: paddr=00060d50 vaddr=3ffb0000 size=0335ch ( 13148) load[0m
+[0;32mI (198) esp_image: segment 2: paddr=000640b4 vaddr=40080000 size=0bf64h ( 48996) load[0m
+[0;32mI (215) esp_image: segment 3: paddr=00070020 vaddr=400d0020 size=2f288h (193160) map[0m
+[0;32mI (265) esp_image: segment 4: paddr=0009f2b0 vaddr=4008bf64 size=04ac4h ( 19140) load[0m
+[0;32mI (279) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (279) boot: Disabling RNG early entropy source...[0m
+[0;32mI (291) cpu_start: Multicore app[0m
+[0;32mI (291) quad_psram: This chip is ESP32-D0WD[0m
+[0;32mI (291) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (293) esp_psram: Speed: 80MHz[0m
+[0;32mI (297) esp_psram: PSRAM initialized, cache is in low/high (2-core) mode.[0m
+[0;33mW (305) esp_psram: Virtual address not enough for PSRAM, map as much as we can. 4MB is mapped[0m
+[0;32mI (781) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (788) cpu_start: Pro cpu start user code[0m
+[0;32mI (788) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (788) app_init: Application information:[0m
+[0;32mI (791) app_init: Project name:     person_detection[0m
+[0;32mI (797) app_init: App version:      7e1b70d-dirty[0m
+[0;32mI (802) app_init: Compile time:     Jun 25 2024 16:19:58[0m
+[0;32mI (808) app_init: ELF file SHA256:  285801d1f...[0m
+[0;32mI (814) app_init: ESP-IDF:          v5.4-dev-421-g4523f2d674[0m
+[0;32mI (820) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (825) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (830) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (835) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (842) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (848) heap_init: At 3FFB4118 len 0002BEE8 (175 KiB): DRAM[0m
+[0;32mI (854) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (860) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (867) heap_init: At 40090A28 len 0000F5D8 (61 KiB): IRAM[0m
+[0;32mI (873) esp_psram: Adding pool of 4096K of PSRAM memory to heap allocator[0m
+[0;32mI (881) spi_flash: detected chip: generic[0m
+[0;32mI (885) spi_flash: flash io: qio[0m
+[0;33mW (889) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (900) main_task: Started on CPU0[0m
+[0;32mI (910) main_task: Calling app_main()[0m
+[0;32mI (910) gpio: GPIO[25]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:2 [0m
+[0;32mI (910) cam_hal: cam init ok[0m
+[0;32mI (920) sccb: pin_sda 26 pin_scl 27[0m
+[0;32mI (920) sccb: sccb_i2c_port=1[0m
+[0;32mI (920) gpio: GPIO[32]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (960) camera: Detected camera at address=0x30[0m
+[0;32mI (960) camera: Detected OV2640 camera[0m
+[0;32mI (960) camera: Camera PID=0x26 VER=0x42 MIDL=0x7f MIDH=0xa2[0m
+[0;32mI (1030) esp32 ll_cam: node_size: 3072, nodes_per_line: 1, lines_per_node: 4, dma_half_buffer_min:  3072, dma_half_buffer: 12288,lines_per_half_buffer: 16, dma_buffer_size: 24576, image_size: 18432[0m
+[0;32mI (1040) cam_hal: buffer_size: 24576, half_buffer_size: 12288, node_buffer_size: 3072, node_cnt: 8, total_cnt: 1[0m
+[0;32mI (1050) cam_hal: Allocating 9216 Byte frame buffer in PSRAM[0m
+[0;32mI (1060) cam_hal: Allocating 9216 Byte frame buffer in PSRAM[0m
+[0;32mI (1060) cam_hal: cam config ok[0m
+[0;32mI (1070) ov2640: Set PLL: clk_2x: 0, clk_div: 3, pclk_auto: 1, pclk_div: 8[0m
+Camera Initialized
+
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (2010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (2710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (3410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (4110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (4810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (5510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (6210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (6910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (7610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (8310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (9010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (9710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (10410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (11110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (11810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (12510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (13210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (13910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (14610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (15310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (16010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (16710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (17410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (18110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (18810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (19510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (20210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (20910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (21610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (22310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (23010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (23710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (24410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (25110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (25810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (26510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (27210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (27910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (28610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (29310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (30010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (30710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (31410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (32110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (32810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (33510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain:Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (34210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (34910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (35610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (36310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (37010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (37710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (38410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (39110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (39810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (40510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (41210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (41910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (42610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (43310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (44010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (44710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (45410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (46110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (46810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (47510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (48210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (48910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (49610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (50310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (51010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (51710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (52410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (53110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (53810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (54510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (55210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (55910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (56610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (57310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (58010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (58710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (59410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (60110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (60810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (61510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (62210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (62910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (63610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (64310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (65010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (65710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (66410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (67110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (67810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (68510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (69210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (69910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (70610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (71310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (72010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (72710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (73410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (74110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (74810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (75510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (76210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (76910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (77610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (78310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (79010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (79710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (80410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (81110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (81810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (82510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (83210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (83910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (84610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (85310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (86010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (86710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (87410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (88110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (88810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (89510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (90210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (90910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (91610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (92310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (93010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (93710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (94410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (95110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (95810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (96510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (97210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (97910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (98610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (99310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (100010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (100710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (101410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (102110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (102810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (103510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (104210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (104910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (105610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (106310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (107010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (107710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (108410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (109110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (109810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (110510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (111210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (111910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (112610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (113310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (114010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (114710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (115410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (116110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (116810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (117510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (118210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:2%, Full Tire score 0%, No Tire score 98%
+[0;32mI (118910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (119610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (120310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (121010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (121710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (122410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (123110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (123810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (124510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (125210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:4%, Full Tire score 14%, No Tire score 82%
+[0;32mI (125910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (126610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (127310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (128010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (128710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (129410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (130110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (130810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (131510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (132210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (132910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (133610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (134310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (135010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (135710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (136410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (137110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (137810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (138510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (139210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (139910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (140610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (141310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (142010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (142710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (143410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (144110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (144810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (145510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (146210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (146910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (147610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (148310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (149010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (149710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (150410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (151110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (151810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (152510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (153210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (153910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (154610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (155310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (156010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (156710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (157410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (158110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:3%, Full Tire score 14%, No Tire score 83%
+[0;32mI (158810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:14%, Full Tire score 2%, No Tire score 84%
+[0;32mI (159510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (160210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (160910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (161610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (162310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (163010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (163710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (164410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (165110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (165810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (166510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (167210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (167910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (168610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (169310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (170010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (170710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (171410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (172110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (172810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (173510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (174210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (174910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (175610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (176310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (177010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (177710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (178410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (179110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (179810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (180510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (181210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (181910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (182610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (183310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (184010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (184710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (185410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (186110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (186810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (187510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (188210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (188910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (189610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (190310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (191010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (191710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (192410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (193110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (193810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (194510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (195210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (195910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (196610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (197310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (198010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (198710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (199410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (200110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (200810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (201510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (202210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (202910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (203610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (204310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (205010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (205710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (206410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 100%, No Tire score 0%
+[0;32mI (207110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (207810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (208510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (209210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (209910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (210610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (211310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (212010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (212710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (213410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:2%, Full Tire score 98%, No Tire score 0%
+[0;32mI (214110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (214810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (215510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (216210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (216910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (217610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (218310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (219010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (219710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (220410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (221110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (221810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (222510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:98%, Full Tire score 0%, No Tire score 2%
+[0;32mI (223210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (223910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (224610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (225310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (226010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (226710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (227410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (228110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (228810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (229510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (230210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (230910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (231610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (232310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (233010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (233710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (234410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (235110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (235810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (236510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (237210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (237910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (238610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (239310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (240010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (240710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (241410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (242110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (242810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (243510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (244210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (244910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (245610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (246310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (247010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (247710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (248410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (249110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (249810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (250510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (251210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (251910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (252610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (253310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (254010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (254710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (255410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (256110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (256810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (257510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (258210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (258910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (259610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (260310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (261010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (261710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (262410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (263110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (263810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (264510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (265210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (265910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (266610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (267310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (268010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (268710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (269410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (270110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (270810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (271510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (272210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (272910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (273610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (274310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (275010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (275710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (276410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (277110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (277810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (278510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (279210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (279910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (280610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (281310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (282010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (282710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (283410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (284110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (284810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (285510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (286210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (286910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (287610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (288310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (289010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (289710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (290410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (291110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (291810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (292510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (293210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (293910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (294610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (295310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (296010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (296710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (297410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 99%
+[0;32mI (298110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:77%, Full Tire score 0%, No Tire score 23%
+[0;32mI (298810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (299510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (300210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (300910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (301610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (302310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (303010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (303710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (304410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (305110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (305810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (306510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (307210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (307910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (308610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (309310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (310010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (310710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (311410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (312110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (312810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (313510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (314210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (314910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (315610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (316310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (317010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (317710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (318410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (319110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (319810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (320510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (321210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (321910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (322610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (323310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (324010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (324710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (325410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (326110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (326810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (327510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (328210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (328910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (329610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (330310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (331010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (331710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (332410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (333110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (333810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (334510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (335210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (335910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (336610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (337310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (338010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (338710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (339410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (340110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (340810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (341510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:5%, Full Tire score 0%, No Tire score 95%
+[0;32mI (342210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (342910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (343610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (344310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (345010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (345710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (346410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (347110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (347810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (348510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (349210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (349910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (350610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (351310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (352010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (352710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (353410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (354110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (354810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (355510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (356210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (356910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (357610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (358310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (359010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (359710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (360410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (361110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (361810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (362510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (363210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (363910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (364610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (365310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (366010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:50%, Full Tire score 0%, No Tire score 50%
+[0;32mI (366710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (367410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (368110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (368810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (369510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (370210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (370910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (371610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (372310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (373010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (373710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (374410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (375110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (375810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (376510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (377210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (377910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (378610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (379310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (380010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (380710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (381410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (382110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (382810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (383510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (384210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (384910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:91%, Full Tire score 0%, No Tire score 9%
+[0;32mI (385610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (386310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (387010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:89%, Full Tire score 0%, No Tire score 11%
+[0;32mI (387710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (388410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:93%, Full Tire score 0%, No Tire score 7%
+[0;32mI (389110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:99%, Full Tire score 0%, No Tire score 1%
+[0;32mI (389810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (390510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (391210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (391910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (392610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (393310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (394010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (394710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (395410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (396110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (396810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (397510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (398210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (398910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (399610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (400310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (401010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (401710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (402410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (403110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (403810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (404510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 19%, No Tire score 81%
+[0;32mI (405210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (405910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (406610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (407310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (408010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (408710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (409410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (410110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (410810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (411510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (412210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:93%, Full Tire score 0%, No Tire score 7%
+[0;32mI (412910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (413610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (414310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (415010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:50%, Full Tire score 0%, No Tire score 50%
+[0;32mI (415710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:9%, Full Tire score 3%, No Tire score 89%
+[0;32mI (416410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (417110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (417810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (418510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (419210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (419910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:5%, Full Tire score 2%, No Tire score 93%
+[0;32mI (420610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain:Flat Tire score:1%, Full Tire score 0%, No Tire score 99%
+[0;32mI (421310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:1%, Full Tire score 0%, No Tire score 99%
+[0;32mI (422010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:4%, Full Tire score 0%, No Tire score 96%
+[0;32mI (422710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (423410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (424110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (424810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (425510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (426210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:64%, Full Tire score 0%, No Tire score 36%
+[0;32mI (426910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 1%, No Tire score 99%
+[0;32mI (427610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 1%, No Tire score 99%
+[0;32mI (428310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 1%, No Tire score 99%
+[0;32mI (429010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 1%, No Tire score 99%
+[0;32mI (429710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (430410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrainFlat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (431110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (431810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 1%, No Tire score 99%
+[0;32mI (432510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intrred
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (433210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 1%, No Tire score 99%
+[0;32mI (433910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 4%, No Tire score 96%
+[0;32mI (434610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 4%, No Tire score 96%
+[0;32mI (435310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 4%, No Tire score 96%
+[0;32mI (436010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:4%, Full Tire score 1%, No Tire score 95%
+[0;32mI (436710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (437410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (438110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (438810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:2%, Full Tire score 0%, No Tire score 98%
+[0;32mI (439510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (440210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (440910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (441610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (442310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (443010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:91%, Full Tire score 0%, No Tire score 9%
+[0;32mI (443710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (444410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (445110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (445810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (446510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (447210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:99%, Full Tire score 0%, No Tire score 1%
+[0;32mI (447910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (448610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (449310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (450010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (450710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (451410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (452110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (452810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (453510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (454210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (454910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (455610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (456310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (457010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (457710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (458410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (459110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (459810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (460510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (461210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (461910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (462610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (463310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (464010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (464710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (465410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (466110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (466810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (467510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (468210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (468910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (469610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (470310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (471010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (471710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (472410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (473110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (473810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (474510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (475210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (475910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (476610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (477310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (478010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (478710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (479410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:100%, Full Tire score 0%, No Tire score 0%
+[0;32mI (480110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (480810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (481510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (482210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (482910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (483610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (484310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (485010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (485710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (486410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (487110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (487810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (488510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (489210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (489910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (490610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (491310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (492010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (492710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (493410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (494110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (494810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (495510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (496210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (496910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (497610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (498310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (499010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (499710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (500410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (501110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (501810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (502510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (503210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (503910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (504610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (505310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (506010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (506710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (507410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (508110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (508810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (509510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (510210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (510910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (511610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (512310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (513010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (513710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (514410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (515110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (515810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (516510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (517210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (517910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (518610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (519310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (520010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (520710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (521410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (522110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (522810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (523510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (524210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (524910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (525610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (526310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (527010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (527710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (528410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (529110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (529810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (530510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (531210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (531910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (532610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (533310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (534010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (534710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (535410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (536110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (536810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (537510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (538210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (538910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (539610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (540310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (541010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (541710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (542410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (543110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (543810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (544510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (545210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (545910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrainFlat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (546610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (547310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (548010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (548710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (549410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (550110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (550810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:89%, Full Tire score 0%, No Tire score 11%
+[0;32mI (551510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (552210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (552910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (553610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (554310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (555010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (555710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (556410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (557110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (557810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (558510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (559210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (559910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (560610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (561310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (562010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (562710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (563410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (564110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (564810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (565510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (566210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (566910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (567610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (568310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (569010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (569710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (570410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (571110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (571810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (572510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (573210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (573910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (574610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (575310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (576010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (576710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (577410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (578110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (578810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (579510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (580210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (580910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (581610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (582310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (583010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (583710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (584410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (585110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (585810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (586510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (587210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (587910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (588610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (589310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (590010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (590710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (591410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (592110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (592810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (593510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (594210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (594910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (595610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (596310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (597010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (597710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (598410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (599110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:50%, Full Tire score 0%, No Tire score 50%
+[0;32mI (599810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrainFlat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (600510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (601210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (601910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (602610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (603310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (604010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (604710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (605410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (606110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (606810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (607510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (608210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (608910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (609610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (610310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (611010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (611710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (612410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (613110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (613810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (614510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (615210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (615910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (616610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (617310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (618010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (618710) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (619410) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (620110) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (620810) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (621510) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (622210) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (622910) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (623610) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (624310) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+
+Flat Tire score:0%, Full Tire score 0%, No Tire score 100%
+[0;32mI (625010) gpio: GPIO[4]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+Image Captured
+

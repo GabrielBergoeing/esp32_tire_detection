@@ -81,23 +81,6 @@ void RespondToDetection(float flat_tire_score, float full_tire_score, float no_t
     gpio_set_level(LED_PIN, 0);
   }
 
-#if DISPLAY_SUPPORT
-  if (!camera_canvas) {
-    create_gui();
-  }
-
-  uint16_t *buf = (uint16_t *) image_provider_get_display_buf();
-
-  bsp_display_lock(0);
-  if (full_tire_score_int < 60 && full_tire_score_int < 60 && no_tire_score_int < 60) {
-    lv_led_off(class_indicator);
-  } else {
-    lv_led_on(class_indicator);
-  }
-  lv_canvas_set_buffer(camera_canvas, buf, IMG_WD, IMG_HT, LV_IMG_CF_TRUE_COLOR);
-  bsp_display_unlock();
-#endif // DISPLAY_SUPPORT
-
   MicroPrintf("Flat Tire score:%d%%, Full Tire score %d%%, No Tire score %d%%",
               flat_tire_score_int, full_tire_score_int, no_tire_score_int);
   init_gpio();

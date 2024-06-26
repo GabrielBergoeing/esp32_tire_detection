@@ -32,6 +32,7 @@ limitations under the License.
 #include <esp_timer.h>
 #include <esp_log.h>
 #include "esp_main.h"
+#include "esp_psram.h"
 
 // Globals, used for compatibility with Arduino-style sketches.
 namespace {
@@ -52,7 +53,7 @@ constexpr int scratchBufSize = 40 * 1024;
 constexpr int scratchBufSize = 0;
 #endif
 // An area of memory to use for input, output, and intermediate arrays.
-constexpr int kTensorArenaSize = 10 * 1024 + scratchBufSize; // 81
+constexpr int kTensorArenaSize = 725 * 1024 + scratchBufSize; // 81 * 1024
 static uint8_t *tensor_arena;//[kTensorArenaSize]; // Maybe we should move this to external
 }  // namespace
 
@@ -68,7 +69,7 @@ void setup() {
   }
 
   if (tensor_arena == NULL) {
-    tensor_arena = (uint8_t *) heap_caps_malloc(kTensorArenaSize, MALLOC_CAP_INTERNAL | MALLOC_CAP_8BIT);
+    tensor_arena = (uint8_t *) heap_caps_malloc(kTensorArenaSize, MALLOC_CAP_SPIRAM | MALLOC_CAP_8BIT);
   }
   if (tensor_arena == NULL) {
     printf("Couldn't allocate memory of %d bytes\n", kTensorArenaSize);
@@ -83,13 +84,11 @@ void setup() {
   //
   // tflite::AllOpsResolver resolver;
   // NOLINTNEXTLINE(runtime-global-variables)
-  static tflite::MicroMutableOpResolver<9> micro_op_resolver;
+  static tflite::MicroMutableOpResolver<7> micro_op_resolver;
   micro_op_resolver.AddConv2D();
   micro_op_resolver.AddSoftmax();
   micro_op_resolver.AddMaxPool2D();
   micro_op_resolver.AddQuantize();
-  micro_op_resolver.AddConcatenation();
-  micro_op_resolver.AddPad();
   micro_op_resolver.AddFullyConnected();
   micro_op_resolver.AddDequantize();
   micro_op_resolver.AddReshape();
@@ -136,9 +135,9 @@ void loop() {
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
-  int8_t flat_tire_score = output->data.uint8[kFlatTireIndex];
-  int8_t full_tire_score = output->data.uint8[kFullTireIndex];
-  int8_t no_tire_score = output->data.uint8[kNotATireIndex];
+  float flat_tire_score = output->data.uint8[kFlatTireIndex];
+  float full_tire_score = output->data.uint8[kFullTireIndex];
+  float no_tire_score = output->data.uint8[kNotATireIndex];
 
   float flat_tire_score_f =
       (flat_tire_score - output->params.zero_point) * output->params.scale;
@@ -157,18 +156,19 @@ void loop() {
   long long total_time = 0;
   long long start_time = 0;
   extern long long softmax_total_time;
-  extern long long dc_total_time;
+  //extern long long dequantize_total_time;
   extern long long conv_total_time;
   extern long long fc_total_time;
   extern long long pooling_total_time;
-  extern long long add_total_time;
-  extern long long mul_total_time;
+  //extern long long quantize_total_time;
+  //extern long long reshape_total_time;
 #endif
 
 void run_inference(void *ptr) {
   /* Convert from uint8 picture data to int8 */
   for (int i = 0; i < kNumCols * kNumRows; i++) {
     input->data.int8[i] = ((uint8_t *) ptr)[i] ^ 0x80;
+    printf("%d, ", input->data.int8[i]);
   }
 
 #if defined(COLLECT_CPU_STATS)
@@ -182,31 +182,31 @@ void run_inference(void *ptr) {
 #if defined(COLLECT_CPU_STATS)
   long long total_time = (esp_timer_get_time() - start_time);
   printf("Total time = %lld\n", total_time / 1000);
-  //printf("Softmax time = %lld\n", softmax_total_time / 1000);
+  printf("Softmax time = %lld (micro sec)\n", softmax_total_time);
   printf("FC time = %lld\n", fc_total_time / 1000);
-  printf("DC time = %lld\n", dc_total_time / 1000);
+  //printf("dequantize time = %lld (micro sec)\n", dequantize_total_time);
   printf("conv time = %lld\n", conv_total_time / 1000);
   printf("Pooling time = %lld\n", pooling_total_time / 1000);
-  printf("add time = %lld\n", add_total_time / 1000);
-  printf("mul time = %lld\n", mul_total_time / 1000);
+  //printf("quantize time = %lld (micro sec)\n", quantize_total_time);
+  //printf("reshape time = %lld (micro sec)\n", reshape_total_time);
 
   /* Reset times */
   total_time = 0;
-  //softmax_total_time = 0;
-  dc_total_time = 0;
+  softmax_total_time = 0;
+  //dequantize_total_time = 0;
   conv_total_time = 0;
   fc_total_time = 0;
   pooling_total_time = 0;
-  add_total_time = 0;
-  mul_total_time = 0;
+  //quantize_total_time = 0;
+  //reshape_total_time = 0;
 #endif
 
   TfLiteTensor* output = interpreter->output(0);
 
   // Process the inference results.
-  int8_t flat_tire_score = output->data.uint8[kFlatTireIndex];
-  int8_t full_tire_score = output->data.uint8[kFullTireIndex];
-  int8_t no_tire_score = output->data.uint8[kNotATireIndex];
+  float flat_tire_score = output->data.uint8[kFlatTireIndex];
+  float full_tire_score = output->data.uint8[kFullTireIndex];
+  float no_tire_score = output->data.uint8[kNotATireIndex];
 
   float flat_tire_score_f =
       (flat_tire_score - output->params.zero_point) * output->params.scale;
